@@ -1,0 +1,153 @@
+
+\usepackage{here, amsmath, latexsym, amssymb, bm, ascmac, mathtools, multicol, tcolorbox, subfig}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{comment}
+\usepackage{amsmath}
+\usepackage{atbegshi} % しおりの文字化け解消
+\usepackage{xcolor}
+\usepackage{xspace}
+\usepackage{hyperref}
+
+\usetheme{Luebeck}                % デザインの選択(省略可)
+\usecolortheme{orchid}            % カラーテーマの選択(省略可)
+
+
+% -------------------
+% フォント
+% -------------------
+%usefonttheme{professionalfonts} % フォントテーマの選択(省略可)
+%\usefonttheme{structuresmallcapsserif}
+\usefonttheme{default}
+
+\useinnertheme{circles}           % フレーム内のテーマの選択(省略可)
+%\useoutertheme{infolines}        % フレーム外側のテーマの選択(省略可)
+\setbeamertemplate{headline}{}    % ヘッダーを表示しない
+
+% -------------------
+% タイトルページ
+% -------------------
+\makeatletter
+\defbeamertemplate*{title page}{supdefault}[1][]
+{
+  \vbox{}
+  \vfill
+  \begingroup
+    \centering
+
+    \begin{beamercolorbox}[sep=25pt,left,#1]{title}
+      \usebeamerfont{title}
+        \vskip0.25em%
+      \vspace{15mm}
+      \textbf{\inserttitle}\par%
+      \vspace{2mm}
+      \ifx\insertsubtitle\@empty\relax%
+      \else%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%
+    \end{beamercolorbox}%
+
+    \vskip1em\par
+
+    \begin{beamercolorbox}[sep=8pt,left,#1]{author}
+      \hspace{5mm}
+      \usebeamerfont{author}\insertauthor
+      \vspace{-5mm}
+    \end{beamercolorbox}
+
+    \begin{beamercolorbox}[sep=8pt,left,#1]{institute}
+      \hspace{5mm}
+      \vspace{-5mm}
+      \usebeamerfont{institute}\insertinstitute
+    \end{beamercolorbox}
+
+    \begin{beamercolorbox}[sep=8pt,left,#1]{date}
+      \hspace{5mm}
+      \vspace{-5mm}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}\vskip0.5em
+
+    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+  \endgroup
+  \vfill
+}
+\setbeamertemplate{title page}[supdefault][colsep=-4bp,rounded=true,shadow=\beamer@themerounded@shadow]
+\setbeamercolor{title}{fg=black}
+\makeatother
+
+% -------------------
+% フッター
+% -------------------
+\setbeamertemplate{footline}[frame number] %スライド番号のみ表示
+\setbeamercolor{section in head/foot}{fg=white, bg=darkgray}    %フッターの文字色、背景色
+\setbeamerfont{footline}{size=\fontsize{5}{7}\selectfont}
+
+\setbeamertemplate{footline}{
+  % フッターの縁装飾
+  \begin{beamercolorbox}[ht=5ex,leftskip=1.4cm,rightskip=.3cm]{author in head/foot} 
+    \vspace{0.05cm}\hspace{-1cm}
+    {\footnotesize \insertauthor} \hspace{3.2cm}  % 著者名
+    {\footnotesize \insertdate}   \hspace{4cm}  % 日付
+    {\footnotesize \insertframenumber}            % ページ番号
+  \end{beamercolorbox}
+}
+
+% -------------------
+% フレームの設定
+% -------------------
+\setbeamersize{text margin left=1.5em,text margin right=1em}
+\setbeamercolor{frametitle}{fg=black, bg=} %フレームタイトルの色、背景色
+
+\ifnum 42146=\euc"A4A2
+\AtBeginShipoutFirst{\special{pdf:tounicode EUC-UCS2}}
+\else
+\AtBeginShipoutFirst{\special{pdf:tounicode 90ms-RKSJ-UCS2}}
+\fi
+
+\setbeamertemplate{navigation symbols}{} % ナビゲーションバー非表示
+% \renewcommand{\kanjifamilydefault}{\gtdefault} %既定をゴシック体に
+\renewcommand{\kanjifamilydefault}{mg} % 規定をヒラギノフォントに
+
+% -------------------
+% 各ページの設定
+% -------------------
+% タイトル
+\setbeamercolor{title}{fg=structure, bg=} 
+
+% 箇条書きスタイル、itemize
+\setbeamertemplate{itemize item}{} % 見出しは何も付けない {\small\raise0.5pt\hbox{$\bullet$}}
+\setbeamertemplate{itemize subitem}{\small\raise0.5pt\hbox{$\bullet$}}
+\setbeamertemplate{itemize subsubitem}{\tiny\raise1.5pt\hbox{$\bullet$}}
+
+\let\olditemize\itemize
+\renewcommand{\itemize}{
+    \olditemize
+    \setlength{\itemsep}{2mm}
+    \setlength{\parskip}{0mm}
+    \setlength{\parsep}{5mm}
+}
+
+% color
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\green}[1]{\textcolor{green!40!black}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue!80!black}{#1}}
+
+
+% -------------------
+% マクロ定義
+% -------------------
+\newcommand{\subtitlepage}[1]{
+  {
+  \setbeamercolor{background canvas}{bg=darkgray}
+  \setbeamercolor{frametitle}{fg=white} %フレームタイトルの色、背景色
+  \begin{frame}[plain]{}
+    \vspace{40mm}
+    \centering
+        % \textcolor{white}{\underline{\textbf{\huge{#1}}}}
+        \textcolor{white}{\textbf{\huge{#1}}}
+  \end{frame}
+  }
+}
+
+\newcommand{\vspp}{\vspace{5mm}}
+\newcommand{\vspm}{\vspace{-5mm}}
