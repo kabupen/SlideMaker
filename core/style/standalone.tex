@@ -8,21 +8,22 @@
 \usepackage{xcolor}
 \usepackage{xspace}
 \usepackage{hyperref}
+\usepackage{graphicx}[dvipdfmx]
 
+
+% -------------------
+% テーマ
+% -------------------
+\useinnertheme{circles}           % フレーム内のテーマの選択(省略可)
+%\useoutertheme{infolines}        % フレーム外側のテーマの選択(省略可)
 \usetheme{Luebeck}                % デザインの選択(省略可)
 \usecolortheme{orchid}            % カラーテーマの選択(省略可)
-
 
 % -------------------
 % フォント
 % -------------------
-%usefonttheme{professionalfonts} % フォントテーマの選択(省略可)
-%\usefonttheme{structuresmallcapsserif}
-\usefonttheme{default}
-
-\useinnertheme{circles}           % フレーム内のテーマの選択(省略可)
-%\useoutertheme{infolines}        % フレーム外側のテーマの選択(省略可)
-\setbeamertemplate{headline}{}    % ヘッダーを表示しない
+\usepackage{fontspec}
+\setsansfont{Gill Sans Light}
 
 % -------------------
 % タイトルページ
@@ -95,18 +96,11 @@
 % -------------------
 % フレームの設定
 % -------------------
-\setbeamersize{text margin left=0.5mm,text margin right=1em}
+\setbeamersize{text margin left=0.5mm,text margin right=2em}
 \setbeamercolor{frametitle}{fg=black, bg=} %フレームタイトルの色、背景色
-
-\ifnum 42146=\euc"A4A2
-\AtBeginShipoutFirst{\special{pdf:tounicode EUC-UCS2}}
-\else
-\AtBeginShipoutFirst{\special{pdf:tounicode 90ms-RKSJ-UCS2}}
-\fi
-
 \setbeamertemplate{navigation symbols}{} % ナビゲーションバー非表示
-% \renewcommand{\kanjifamilydefault}{\gtdefault} %既定をゴシック体に
-\renewcommand{\kanjifamilydefault}{mg} % 規定をヒラギノフォントに
+\setbeamertemplate{headline}{}    % ヘッダーを表示しない
+
 
 % -------------------
 % 各ページの設定
