@@ -1,4 +1,7 @@
 
+% -------------------
+% パッケージ
+% -------------------
 \usepackage{here, amsmath, latexsym, amssymb, bm, ascmac, mathtools, multicol, tcolorbox, subfig}
 \usepackage{multirow}
 \usepackage{graphicx}
@@ -110,8 +113,8 @@
 
 % 箇条書きスタイル、itemize
 \setbeamertemplate{itemize item}{} % 見出しは何も付けない {\small\raise0.5pt\hbox{$\bullet$}}
-\setbeamertemplate{itemize subitem}{\small\raise0.5pt\hbox{$\bullet$}}
-\setbeamertemplate{itemize subsubitem}{\tiny\raise1.5pt\hbox{$\bullet$}}
+\setbeamertemplate{itemize subitem}{\color{gray}\small\raise0.5pt\hbox{$\bullet$}}
+\setbeamertemplate{itemize subsubitem}{\color{gray}\tiny\raise1.5pt\hbox{$\bullet$}}
 
 \let\olditemize\itemize
 \renewcommand{\itemize}{
