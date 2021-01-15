@@ -1,0 +1,109 @@
+%!TEX TS-program = xelatex
+
+\documentclass[aspectratio=46, 10pt, t]{beamer} % aspectratio=43, 149, 169
+
+% Style File
+\input{/Users/takeda/workspace/public/Leptoquark/SlideMaker/core/style/standalone}
+
+\input{/Users/takeda/workspace/public/Leptoquark/SlideMaker/core/style/command.sty}
+
+\graphicspath{{./figure/}}
+
+\title{Third-generation scalar leptoquark search}
+\subtitle{Background estimation summary}
+\author{Kosuke TAKEDA}
+\institute{Kobe University}
+\date{\today}
+
+% ------- begin document --------- %
+\begin{document}
+
+\frame[plain]{\titlepage}
+
+%\begin{frame}{}
+% \tableofcontents
+%\end{frame}
+
+
+\begin{frame}{Discussions}
+  \begin{itemize}
+    \item Open items for the \ttbar fake SF method
+      \begin{itemize}
+        \item How did you treat the QCD multi-jets in the 1 b-tag CR?
+          \begin{itemize}
+            \item The previous report didn't take into account the multi-jets.
+            \item To avoid the QCD multi-jets handling, the new fit model is performed only for the 2 b-tag CRs.
+          \end{itemize}
+        \item Why did the SF have the positive correlations with the \ttbar norm ? 
+          \begin{itemize}
+            \item In the previous report, the \ttbar norm was only for the true \ttbar backgrounds. 
+              When I modified the model (\ttbar for the true and fake \ttbar), the positive correlations are resolved.
+          \end{itemize}
+      \end{itemize}
+
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Discussions}
+  \begin{itemize}
+    \item Open items for the \ttbar fake SF method
+      \begin{itemize}
+        \item How do you treat the QCD multi-jet in the 1 b-tag CR?
+        \item Why did the SF have the positive correlations with the \ttbar norm ? 
+          \begin{itemize}
+            \item This 
+          \end{itemize}
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Available Statistics in CR1}
+\end{frame}
+
+\begin{frame}{Available Statistics in CR3}
+  % 1-prong
+  \begin{table}
+    \begin{tabular}{lcccccccc}
+      & $[0,35]$ & $[35,40]$ & $[40,45]$ & $[45,50]$  &  $[50,55]$ &  $[55,70]$ &  $[70, 100]$ & $[100, \infty]$ \\ \hline
+      ttbar          & 3472.321  & 1345.593  & 1165.226  & 1017.943  & 886.937   & 1916.786  & 2139.836  & 1367.850   \\
+      stop           & 0.378     & 89.613    & 0.078     & 0.087     & 56.461    & 0.256     & 0.119     & 0.158      \\
+      Ztt            & 193.430   & 71.147    & 63.227    & 52.462    & 45.186    & 98.733    & 116.091   & 86.316     \\
+      Zll            & 104.089   & 41.214    & 29.557    & 18.256    & 16.628    & 38.860    & 42.939    & 43.230     \\
+      W              & 15.586    & 5.380     & 2.602     & 2.697     & 1.884     & 5.479     & 5.586     & 2.007      \\
+      V              & 0.491     & 0.189     & 0.169     & 0.154     & 0.129     & 0.339     & 0.494     & 0.384      \\
+      ttbar (Fake)   & 2401.834  & 682.997   & 494.333   & 371.094   & 283.047   & 545.713   & 500.444   & 304.457    \\
+      stop (Fake)    & 2.487     & 0.507     & 0.565     & 0.436     & 0.124     & 0.351     & 0.450     & 0.527      \\
+      Ztt (Fake)     & 2.903     & 0.764     & 0.276     & 0.517     & 0.858     & 0.242     & 0.040     & 0.084      \\
+      Zll(Fake)      & 20.050    & 3.313     & 2.257     & 1.904     & 1.115     & 3.529     & 2.663     & 2.920      \\
+      W (Fake)       & 309.649   & 63.406    & 50.001    & 31.588    & 27.984    & 51.012    & 64.512    & 63.581     \\
+      V (Fake)       & 0.026     & 0.004     & 0.004     & 0.002     & 0.002     & 0.003     & 0.003     & 0.001      \\
+    \end{tabular}
+  \end{table}
+
+  % 3-prong
+  \begin{table}
+    \begin{tabular}{lccccccc}
+      & $[0,35]$ & $[35,40]$ & $[40,45]$ & $[45,50]$  &  $[50,55]$ &  $[55,70]$ &  $[70, \infty]$ \\ \hline
+      ttbar          & 1036.374  & 471.880   & 406.819   & 344.627   & 310.587   & 735.224   & 1434.590   \\
+      stop           & 0.458     & 26.184    & 0.162     & 24.565    & 0.121     & 51.314    & 0.189      \\
+      Ztt            & 45.078    & 19.420    & 19.011    & 15.793    & 14.473    & 34.289    & 70.736     \\
+      Zll            & 3.376     & 1.483     & 1.261     & 0.490     & 0.456     & 1.728     & 7.501      \\
+      W              & 16.248    & 5.588     & 4.325     & 1.971     & 1.832     & 4.542     & 4.741      \\
+      V              & 0.133     & 0.038     & 0.040     & 0.029     & 0.035     & 0.130     & 0.239      \\
+      ttbar (Fake)   & 778.009   & 234.441   & 156.971   & 123.935   & 92.256    & 158.669   & 237.135    \\
+      stop (Fake)    & 0.823     & 0.134     & 11.871    & 9.733     & 0.048     & 14.470    & 0.142      \\
+      Ztt (Fake)     & 0.929     & 0.353     & 0.241     & 0.163     & 0.003     & 0.091     & 0.288      \\
+      Zll(Fake)      & 8.525     & 1.341     & 1.128     & 1.172     & 1.056     & 1.235     & 1.966      \\
+      W (Fake)       & 132.811   & 36.365    & 23.041    & 11.977    & 10.548    & 22.859    & 59.917     \\
+      V (Fake)       & 0.006     & 0.001     & 0.001     & 0.001     & 0.001     & 0.001     & 0.004      \\
+    \end{tabular}
+  \end{table}
+\end{frame}
+
+\begin{frame}{Available Statistics in CR0}
+\end{frame}
+
+
+
+\end{document}
